@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/Desktop/CH-lab/--master.iml" filepath="$USER_HOME$/Desktop/CH-lab/--master.iml" />
       <module fileurl="file://$PROJECT_DIR$/Progect Chemistry.iml" filepath="$PROJECT_DIR$/Progect Chemistry.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/CH-lab/resources/resources.iml" filepath="$USER_HOME$/Desktop/CH-lab/resources/resources.iml" />
     </modules>
   </component>
 </project>
