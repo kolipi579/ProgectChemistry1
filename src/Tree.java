@@ -2,16 +2,15 @@ public class Tree {
 
     TreeNode root;
 
-    public void addNode(int key, String name,int n, String[] arr) {
+    public void addNode(int key, String name, int n, int g, char[][] arr) {
 
-        TreeNode newNode = new TreeNode(key, name,n, arr);
+        TreeNode newNode = new TreeNode(key, name, n, g, arr);
 
         if (root == null) {
             root = newNode;
         } else {
             TreeNode focusNode = root;
             TreeNode parent;
-
             while (true) {
                 parent = focusNode;
                 if (key < focusNode.key) {
