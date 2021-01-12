@@ -2,9 +2,9 @@ public class Tree {
 
     TreeNode root;
 
-    public void addNode(int key, String name, int n, int g, char[][] arr) {
+    public void addNode(int key, String name, char[][] arr) {
 
-        TreeNode newNode = new TreeNode(key, name, n, g, arr);
+        TreeNode newNode = new TreeNode(key, name, arr);
 
         if (root == null) {
             root = newNode;

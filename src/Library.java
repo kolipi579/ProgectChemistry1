@@ -1,11 +1,10 @@
 public class Library {
 
     int k;
-    int n;
-    int g;
     boolean f;
     String name;
-    char arr[][];
+    char[][] arr;
+    Tree tree;
 
     private static void main(String[] args){
         Tree TreeCH5 = new Tree();
@@ -16,17 +15,4 @@ public class Library {
         Tree TreeCH10 = new Tree();
     }
 
-    {
-        g = 11;
-        n = 5;
-        arr = new char[][]{{}, {}, {'C','H','-','C','H','-','C','H','-','C','H'}, {}, {}};
-        name = "Бутан";
-        Tree TreeCH4 = new Tree();
-        k = 0;
-        TreeCH4.addNode(k,name,n,g,arr);
-        while (f){
-            k++;
-            TreeCH4.addNode(k,name,n,g,arr);
-        }
-    }
 }
