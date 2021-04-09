@@ -1,13 +1,20 @@
 public class AddRadicals {
 
-    char[][] AddRad(char[][] arr,int length, int offset){
-            for (int j = 0; j < arr[0].length; j++){
+    public char[][] AddRadUp(char[][] arr,int length, int offset){
+            for (int j = 0; j < arr.length; j++){
                 arr[offset][j] = SetRadical(length)[1][j];
             }
         return arr;
     }
 
-    String AddName(String name,int length){
+    public char[][] AddRadDown(char[][] arr,int length, int offset){
+        for (int j = arr.length/2; j < arr.length; j++){
+            arr[offset][j] = SetRadical(length)[1][j];
+        }
+        return arr;
+    }
+
+    public String AddName(String name,int length){
         StringBuilder nameredux = new StringBuilder(name);
         nameredux = nameredux.insert(0,SetName(length));
         name = nameredux.toString();
