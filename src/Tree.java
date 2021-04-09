@@ -23,6 +23,7 @@ public class Tree {
                     focusNode = focusNode.rightChild;
                     if (focusNode == null) {
                         parent.rightChild = newNode;
+                        return;
                     }
                 }
             }

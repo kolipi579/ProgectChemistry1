@@ -7,12 +7,13 @@ class Tree4 extends Library{
             arr[2][j] = 'C';
         }
         name = "Бутан";
-        tree.root = new TreeNode(k, name, arr);
+        tree.addNode(0,name,arr);
         int offset = 0;
         for (int k = 0; k < 2; k++){
             AddRadicals radicals = new AddRadicals();
             arr = radicals.AddRadUp(arr,1,k+1);
-            name = radicals.AddName(name,1);
+            name = radicals.AddName(name,0);
+            tree.addNode(k+2,name,arr);
         }
 
 
