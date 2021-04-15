@@ -71,8 +71,8 @@ public class Tree {
 
     public char[][] findNodeWithName(String name, TreeNode focusNode) {
         if (focusNode != null) {
-            postOrderTraverseTree(focusNode.leftChild);
-            postOrderTraverseTree(focusNode.rightChild);
+            findNodeWithName(name,focusNode.leftChild);
+            findNodeWithName(name,focusNode.rightChild);
             if (focusNode.name.equals(name)){
                 return focusNode.arr;
             }
