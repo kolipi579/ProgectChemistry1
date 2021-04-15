@@ -69,6 +69,17 @@ public class Tree {
         return focusNode;
     }
 
+    public char[][] findNodeWithName(String name, TreeNode focusNode) {
+        if (focusNode != null) {
+            postOrderTraverseTree(focusNode.leftChild);
+            postOrderTraverseTree(focusNode.rightChild);
+            if (focusNode.name.equals(name)){
+                return focusNode.arr;
+            }
+        }
+        return null;
+    }
+
     public boolean remove(int key) {
         TreeNode focusNode = root;
         TreeNode parent = root;
