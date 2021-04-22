@@ -72,6 +72,74 @@ public class Controller {
                     e.printStackTrace();
                 }
             }
+            if (shortname.toString().equals("Пентан")) {
+                Tree5 tree5 = new Tree5();
+                try {
+                    char[][] arr = new char[tree5.findWithName(getUserName).length][tree5.findWithName(getUserName)[0].length];
+                    for (int i = 0; i < arr.length; i++) {
+                        for (int j = 0; j < arr[0].length; j++) {
+                            arr[i][j] = tree5.findWithName(getUserName)[i][j];
+                        }
+                    }
+                    for (int j = 0; j < arr[0].length; j++) {
+                        exit.append(arr[2][j]);
+                        try {
+                            if ((arr[2][j] == 'C') && (arr[2][j + 1] == 'C')) {
+                                exit.append("-");
+                            }
+                        } catch (ArrayIndexOutOfBoundsException e) {
+                            continue;
+                        }
+                    }
+
+                    carbonHydrogen.setText(exit.toString());
+
+                    exit = new StringBuilder();
+
+                    for (int j = 0; j < arr[0].length; j++) {
+                        exit.append(arr[1][j]);
+                    }
+
+                    carbonhydrogenup.setText(exit.toString());
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (shortname.toString().equals("Пропан")) {
+                Tree3 tree3 = new Tree3();
+                try {
+                    char[][] arr = new char[tree3.findWithName(getUserName).length][tree3.findWithName(getUserName)[0].length];
+                    for (int i = 0; i < arr.length; i++) {
+                        for (int j = 0; j < arr[0].length; j++) {
+                            arr[i][j] = tree3.findWithName(getUserName)[i][j];
+                        }
+                    }
+                    for (int j = 0; j < arr[0].length; j++) {
+                        exit.append(arr[2][j]);
+                        try {
+                            if ((arr[2][j] == 'C') && (arr[2][j + 1] == 'C')) {
+                                exit.append("-");
+                            }
+                        } catch (ArrayIndexOutOfBoundsException e) {
+                            continue;
+                        }
+                    }
+
+                    carbonHydrogen.setText(exit.toString());
+
+                    exit = new StringBuilder();
+
+                    for (int j = 0; j < arr[0].length; j++) {
+                        exit.append(arr[1][j]);
+                    }
+
+                    carbonhydrogenup.setText(exit.toString());
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
         });
     }
 }
