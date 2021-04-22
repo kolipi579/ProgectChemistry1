@@ -1,9 +1,7 @@
 public class AddRadicals {
 
     public char[][] AddRadUp(char[][] arr, int length, int offset) {
-        for (int j = 0; j < arr.length / 2; j++) {
-            arr[offset][j] = SetRadical(length)[0][j];
-        }
+        arr[offset][1] = SetRadical(length)[0][1];
         return arr;
     }
 

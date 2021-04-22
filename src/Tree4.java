@@ -1,8 +1,17 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Tree4 extends Library {
 
     {
         int i = 0;
         arr = new char[5][5];
+        for (int j = 0; j < 5; j++) {
+            for (int l = 0; l < 5; l++) {
+                arr[j][l] = ' ';
+            }
+        }
         for (int j = 0; j < 4; j++) {
             arr[2][j] = 'C';
         }
@@ -11,35 +20,34 @@ public class Tree4 extends Library {
         int offset = 0;
         for (int k = 0; k < 2; k++) {
             AddRadicals radicals = new AddRadicals();
-            arr = radicals.AddRadUp(arr, 1, k + 1);
+            if (offset < k) {
+                arr = radicals.AddRadUp(arr, 1, offset + 1);
+            }
             name = radicals.AddName(name, 0);
             tree.addNode(k + 2, name, arr);
         }
-
-        /*i = 0;
-        arr = new char[5][5];
-        for (int j = 0; j < 4; j++) {
-            arr[2][j] = 'C';
-        }
-        name = "Бутан";
-        tree.addNode(0, name, arr);
-        offset = 0;
-        for (int k = 0; k > -2; k--) {
-            AddRadicals radicals = new AddRadicals();
-            arr = radicals.AddRadDown(arr, 1, k + 1);
-            name = radicals.AddName(name, 0);
-            tree.addNode(k + 2, name, arr);
-        }*/
 
     }
 
-    public char[][] findWithName(String name) {
-        char[][] arr = new char[tree.findNodeWithName(name, tree.root).length][tree.findNodeWithName(name, tree.root)[0].length];
-        for (int i = 0; i < tree.findNodeWithName(name, tree.root).length; i++) {
-            for (int j = 0; j < tree.findNodeWithName(name, tree.root)[0].length; j++) {
-                arr[i][j] = tree.findNodeWithName(name, tree.root)[i][j];
+    public char[][] findWithName(String name) throws FileNotFoundException {
+        tree.findNodeWithName(name, tree.root);
+        Scanner fout = new Scanner(new File("for2arr"));
+        char[][] arr = new char[5][5];
+        int i = 0;
+        String s;
+        while (fout.hasNext()) {
+            if (fout.hasNextInt()) {
+                i = fout.nextInt();
+            } else {
+                s = fout.nextLine();
+                char[] chars = s.toCharArray();
+                for (int j = 0; j < 5; j++) {
+                    arr[i][j] = chars[j + 1];
+                }
             }
         }
+
+        fout.close();
         return arr;
     }
 }

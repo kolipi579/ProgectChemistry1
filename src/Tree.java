@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 public class Tree {
 
     TreeNode root;
@@ -69,15 +73,24 @@ public class Tree {
         return focusNode;
     }
 
-    public char[][] findNodeWithName(String name, TreeNode focusNode) {
+    public void findNodeWithName(String name, TreeNode focusNode) throws FileNotFoundException {
+        File file = new File("for2arr");
+        PrintWriter fout = new PrintWriter(file);
         if (focusNode != null) {
-            if (focusNode.name.equals(name)){
-                return focusNode.arr;
+            if (focusNode.name.equals(name)) {
+                for (int i = 0; i < focusNode.arr.length; i++) {
+                    fout.print(i);
+                    fout.print(' ');
+                    for (int j = 0; j < focusNode.arr[0].length; j++) {
+                        fout.print(focusNode.arr[i][j]);
+                    }
+                    fout.println();
+                }
             }
             //findNodeWithName(name,focusNode.leftChild);
-            findNodeWithName(name,focusNode.rightChild);
+            findNodeWithName(name, focusNode.rightChild);
         }
-        return focusNode.arr;
+        fout.close();
     }
 
     public boolean remove(int key) {
