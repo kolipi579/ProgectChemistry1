@@ -16,6 +16,21 @@ public class Tree4 extends Library {
             tree.addNode(k + 2, name, arr);
         }
 
+        /*i = 0;
+        arr = new char[5][5];
+        for (int j = 0; j < 4; j++) {
+            arr[2][j] = 'C';
+        }
+        name = "Бутан";
+        tree.addNode(0, name, arr);
+        offset = 0;
+        for (int k = 0; k > -2; k--) {
+            AddRadicals radicals = new AddRadicals();
+            arr = radicals.AddRadDown(arr, 1, k + 1);
+            name = radicals.AddName(name, 0);
+            tree.addNode(k + 2, name, arr);
+        }*/
+
     }
 
     public char[][] findWithName(String name) {

@@ -71,13 +71,13 @@ public class Tree {
 
     public char[][] findNodeWithName(String name, TreeNode focusNode) {
         if (focusNode != null) {
-            findNodeWithName(name,focusNode.leftChild);
-            findNodeWithName(name,focusNode.rightChild);
             if (focusNode.name.equals(name)){
                 return focusNode.arr;
             }
+            //findNodeWithName(name,focusNode.leftChild);
+            findNodeWithName(name,focusNode.rightChild);
         }
-        return null;
+        return focusNode.arr;
     }
 
     public boolean remove(int key) {
