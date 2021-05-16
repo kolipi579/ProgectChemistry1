@@ -4,6 +4,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.io.FileNotFoundException;
+import java.util.Locale;
 
 public class Controller {
 
@@ -38,108 +39,34 @@ public class Controller {
                 }
                 shortname.insert(0, ch[i]);
             }
-            if (shortname.toString().equals("Бутан")) {
-                Tree4 tree4 = new Tree4();
-                try {
-                    char[][] arr = new char[tree4.findWithName(getUserName).length][tree4.findWithName(getUserName)[0].length];
-                    for (int i = 0; i < arr.length; i++) {
-                        for (int j = 0; j < arr[0].length; j++) {
-                            arr[i][j] = tree4.findWithName(getUserName)[i][j];
-                        }
-                    }
-                    for (int j = 0; j < arr[0].length; j++) {
-                        exit.append(arr[2][j]);
-                        try {
-                            if ((arr[2][j] == 'C') && (arr[2][j + 1] == 'C')) {
-                                exit.append("-");
-                            }
-                        } catch (ArrayIndexOutOfBoundsException e) {
-                            continue;
-                        }
-                    }
-
-                    carbonHydrogen.setText(exit.toString());
-
-                    exit = new StringBuilder();
-
-                    for (int j = 0; j < arr[0].length; j++) {
-                        exit.append(arr[1][j]);
-                    }
-
-                    carbonhydrogenup.setText(exit.toString());
-
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+            char[][] chars = new char[5][5];
+            Map map = new Map();
+            map.map.get(getUserName);
+            for (int i = 0; i < chars.length; i++) {
+                for (int j = 0; j < chars[0].length; j++) {
+                    chars[i][j] = map.map.get(getUserName)[i][j];
                 }
             }
-            if (shortname.toString().equals("Пентан")) {
-                Tree5 tree5 = new Tree5();
+            for (int j = 0; j < chars[0].length; j++) {
+                exit.append(chars[2][j]);
                 try {
-                    char[][] arr = new char[tree5.findWithName(getUserName).length][tree5.findWithName(getUserName)[0].length];
-                    for (int i = 0; i < arr.length; i++) {
-                        for (int j = 0; j < arr[0].length; j++) {
-                            arr[i][j] = tree5.findWithName(getUserName)[i][j];
-                        }
+                    if ((chars[2][j] == 'C') && (chars[2][j + 1] == 'C')) {
+                        exit.append("-");
                     }
-                    for (int j = 0; j < arr[0].length; j++) {
-                        exit.append(arr[2][j]);
-                        try {
-                            if ((arr[2][j] == 'C') && (arr[2][j + 1] == 'C')) {
-                                exit.append("-");
-                            }
-                        } catch (ArrayIndexOutOfBoundsException e) {
-                            continue;
-                        }
-                    }
-
-                    carbonHydrogen.setText(exit.toString());
-
-                    exit = new StringBuilder();
-
-                    for (int j = 0; j < arr[0].length; j++) {
-                        exit.append(arr[1][j]);
-                    }
-
-                    carbonhydrogenup.setText(exit.toString());
-
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    continue;
                 }
             }
-            if (shortname.toString().equals("Пропан")) {
-                Tree3 tree3 = new Tree3();
-                try {
-                    char[][] arr = new char[tree3.findWithName(getUserName).length][tree3.findWithName(getUserName)[0].length];
-                    for (int i = 0; i < arr.length; i++) {
-                        for (int j = 0; j < arr[0].length; j++) {
-                            arr[i][j] = tree3.findWithName(getUserName)[i][j];
-                        }
-                    }
-                    for (int j = 0; j < arr[0].length; j++) {
-                        exit.append(arr[2][j]);
-                        try {
-                            if ((arr[2][j] == 'C') && (arr[2][j + 1] == 'C')) {
-                                exit.append("-");
-                            }
-                        } catch (ArrayIndexOutOfBoundsException e) {
-                            continue;
-                        }
-                    }
 
-                    carbonHydrogen.setText(exit.toString());
+            carbonHydrogen.setText(exit.toString());
 
-                    exit = new StringBuilder();
+            exit = new StringBuilder();
 
-                    for (int j = 0; j < arr[0].length; j++) {
-                        exit.append(arr[1][j]);
-                    }
-
-                    carbonhydrogenup.setText(exit.toString());
-
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+            for (int j = 0; j < chars[0].length; j++) {
+                exit.append(chars[1][j]);
             }
+
+            carbonhydrogenup.setText(exit.toString());
         });
     }
 }
